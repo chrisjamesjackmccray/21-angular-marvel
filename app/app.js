@@ -29,14 +29,14 @@ var App = angular.module('app', ['ui.router']);
 
 
 
-$stateProvider
-.state('character', {
-	url: '/characterController/:name',
-	controller: "CharacterController as CharacterCtrl",
-	template: require('./views/character.html')
-})
-
 function config($stateProvider, $urlRouterProvider) {
+	$stateProvider
+	.state('character', {
+		url: '/characters/:name',
+		controller: "CharacterController as CharacterCtrl",
+		template: require('./views/character.html')
+	})
+
 }
 
 App.config(config);
@@ -89,36 +89,29 @@ App.config(config);
 */
 
 class CharacterController {
-	constructor($stateParams, $scope)
-
-	fetch('http://gateway.marvel.com:80/v1/public/characters?name=');
-    .then((response) => {
-      return response.json();
-    })
-
-		.then((response) => {
-      this.name = response.name;
-
-      $scope.$digest();
-     });
-  }
-
-	this.getData()
-
-}
-
-
-
-
-
-
-
-
-class CharacterController {
-
-	constructor($scope, $stateParams) {
+	constructor($stateParams, $scope) {
+		this.name = $stateParams.name;
+		this.$scope = $scope;
+		this.getData();
 	}
 
+	getData() {
+			fetch(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=1c51377e8242564595ee97800ae287c7`)
+		    .then((response) => {
+		      return response.json();
+		    })
+
+				.then((response) => {
+					console.log(response);
+					this.description =
+					this.image = `${response.data.results[0].thumbail.path}.${response.data.results[0].thumbnail.extension}`;
+
+
+		      this.$scope.$digest();
+		     });
+		  }
+
 }
+
 
 App.controller('CharacterController', CharacterController);
