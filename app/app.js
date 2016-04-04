@@ -33,7 +33,7 @@ function config($stateProvider, $urlRouterProvider) {
 	$stateProvider
 	.state('character', {
 		url: '/characters/:name',
-		controller: "CharacterController as CharacterCtrl",
+		controller: "CharacterController as characterCtrl",
 		template: require('./views/character.html')
 	})
 
@@ -104,11 +104,9 @@ class CharacterController {
 				.then((response) => {
 					console.log(response);
 
-					this.id = response.data.results.events.id;
+					this.id = response.data.results[0].id;
 					this.description = response.data.results[0].description;
-					this.image = `${response.data.results[0].thumbail.path}.${response.data.results[0].thumbnail.extension}`;
-
-
+					this.image = `${response.data.results[0].thumbnail.path}.${response.data.results[0].thumbnail.extension}`;
 
 		      this.$scope.$digest();
 		     });
