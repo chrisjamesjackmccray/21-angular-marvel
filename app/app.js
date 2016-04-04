@@ -103,8 +103,11 @@ class CharacterController {
 
 				.then((response) => {
 					console.log(response);
-					this.description =
+
+					this.id = response.data.results.events.id;
+					this.description = response.data.results[0].description;
 					this.image = `${response.data.results[0].thumbail.path}.${response.data.results[0].thumbnail.extension}`;
+
 
 
 		      this.$scope.$digest();

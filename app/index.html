@@ -7,20 +7,27 @@
   </head>
   <body>
 
-    <div ng-src="{{ character.Ctrl.name }}">
+    <nav>
 
-    </div>
-
-    <div ng-src="{{ character.Ctrl.image }}">
-
-    </div>
-
-    <div ng-src="{{ character.Ctrl.description }}">
-
-    </div>
+      <ul>
 
 
+        <li>
+         <img ng-src="{{ characterCtrl.image }}" alt="">
+        </li>
 
+        <li>
+         <a ui-href="marvel {{ characterCtrl.name }}"> </a>
+        </li>
+
+        <li>
+         <a ui-href="marvel {{ characterCtrl.description }}"> </a>
+        </li>
+
+
+
+      </ul>
+    </nav>
 
 
     <div ui-view></div>
