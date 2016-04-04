@@ -17,6 +17,7 @@ var App = angular.module('app', ['ui.router']);
   STEP 1: Use $stateProvider.state to add a single route called
           character that points to /characters/:name
 
+
           It should use the CharacterController at the bottom of this file,
           and it should use the ./views/character.html template. Don't forget,
           we use require() to include templates!
@@ -24,6 +25,16 @@ var App = angular.module('app', ['ui.router']);
   STEP 2: Use $urlRouterProvider.otherwise() to default to
           /characters/Captain America
 */
+
+
+
+
+$stateProvider
+.state('character', {
+	url: '/characterController/:name',
+	controller: "CharacterController as CharacterCtrl",
+	template: require('./views/character.html')
+})
 
 function config($stateProvider, $urlRouterProvider) {
 }
@@ -42,6 +53,7 @@ App.config(config);
 
   STEP 1: Get the name from $stateParams and assign it
           to the property name;
+
 
   STEP 2: Create a getData() method that uses fetch
           to call out to http://gateway.marvel.com:80/v1/public/characters?name=<character name here>&apikey=<api key here>
@@ -75,6 +87,32 @@ App.config(config);
           routes, you would say {{ charCtrl.name }} to get the
           name property.
 */
+
+class CharacterController {
+	constructor($stateParams, $scope)
+
+	fetch('http://gateway.marvel.com:80/v1/public/characters?name=');
+    .then((response) => {
+      return response.json();
+    })
+
+		.then((response) => {
+      this.name = response.name;
+
+      $scope.$digest();
+     });
+  }
+
+	this.getData()
+
+}
+
+
+
+
+
+
+
 
 class CharacterController {
 
