@@ -2,7 +2,8 @@
   width: 100px;
   height: 20px;
   float: left;
-  margin: 10px 40px 0 40px; }
+  margin: 10px 40px 0 40px;
+  text-decoration: none; }
 
 .spider a {
   color: white; }
@@ -39,6 +40,9 @@
   height: 20px;
   float: left;
   margin: 10px 0 0 0; }
+
+.thor a {
+  color: white; }
 
 .head {
   width: 800px;
