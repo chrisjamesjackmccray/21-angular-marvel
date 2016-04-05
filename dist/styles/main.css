@@ -1,28 +1,63 @@
 .spider {
-  width: 200px;
+  width: 100px;
   height: 20px;
-  float: left; }
+  float: left;
+  margin: 10px 40px 0 40px; }
+
+.spider a {
+  color: white; }
 
 .america {
-  width: 200px;
+  width: 150px;
   height: 20px;
-  float: left; }
+  float: left;
+  margin: 10px 40px 0 0; }
+
+.america a {
+  color: white; }
 
 .falcon {
-  width: 200px;
+  width: 100px;
   height: 20px;
-  float: left; }
+  float: left;
+  margin: 10px 40px 0 0; }
+
+.falcon a {
+  color: white; }
 
 .wolf {
-  width: 200px;
+  width: 100px;
   height: 20px;
-  float: left; }
+  float: left;
+  margin: 10px 40px 0 0; }
 
 .thor {
-  width: 200px;
+  width: 100px;
   height: 20px;
-  float: left; }
+  float: left;
+  margin: 10px 0 0 0; }
 
 .head {
-  width: 1025px;
-  height: 20px; }
+  width: 800px;
+  height: 40px;
+  margin: 0 auto;
+  background-color: #2C3E50; }
+
+img {
+  width: 400px;
+  margin: 0 0 0 180px;
+  padding: 20px; }
+
+.character {
+  width: 800px;
+  height: 500px;
+  margin: 0 auto; }
+
+h1 {
+  text-align: center;
+  margin: 0 0 0 0; }
+
+p {
+  text-align: center;
+  margin: 0 0 0 0;
+  padding: 0 150px 0 150px; }
