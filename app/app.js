@@ -12,7 +12,7 @@ var App = angular.module('app', ['ui.router']);
 
   This is where you pass in config time options to Providers.
   For example, this is where you can configure $stateProvider
-  to set up your routing.
+  to set up your routing.lxs
 
   STEP 1: Use $stateProvider.state to add a single route called
           character that points to /characters/:name
@@ -36,6 +36,8 @@ function config($stateProvider, $urlRouterProvider) {
 		controller: "CharacterController as characterCtrl",
 		template: require('./views/character.html')
 	})
+
+	$urlRouterProvider.otherwise('/characters/:nameCaptain America')
 
 }
 
