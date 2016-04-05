@@ -37,7 +37,7 @@ function config($stateProvider, $urlRouterProvider) {
 		template: require('./views/character.html')
 	})
 
-	$urlRouterProvider.otherwise('/characters/:nameCaptain America')
+	$urlRouterProvider.otherwise('/characters/Captain America')
 
 }
 
